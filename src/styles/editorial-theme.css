@@ -216,7 +216,10 @@ html:not(.dark) body [class*="bg-dark-"],
 html.dark body [class~="bg-white"],
 html.dark body [class*="bg-gray-"],
 html.dark body [class*="bg-slate-"],
-html.dark body [class*="bg-dark-"] {
+html.dark body [class*="bg-dark-"],
+body .select-trigger,
+body .tab-active,
+body .sticky-col {
   background-color: var(--editorial-paper) !important;
   background-image: none !important;
 }
