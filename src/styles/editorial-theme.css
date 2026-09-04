@@ -74,9 +74,9 @@ body .btn-stripe,
 body .btn-airwallex,
 body .btn-alipay,
 body .btn-wxpay {
-  background: var(--editorial-ink) !important;
+  background: var(--editorial-paper) !important;
   background-image: none !important;
-  color: var(--editorial-bg) !important;
+  color: var(--editorial-ink) !important;
   text-shadow: none !important;
 }
 
@@ -102,8 +102,17 @@ body .btn-ghost {
 }
 
 body .btn-secondary:hover,
-body .btn-ghost:hover {
-  background: rgba(28, 28, 28, 0.06) !important;
+body .btn-ghost:hover,
+body .btn:hover,
+body .btn-primary:hover,
+body .btn-danger:hover,
+body .btn-success:hover,
+body .btn-warning:hover,
+body .btn-stripe:hover,
+body .btn-airwallex:hover,
+body .btn-alipay:hover,
+body .btn-wxpay:hover {
+  background: rgba(255, 255, 255, 0.34) !important;
   border-color: rgba(28, 28, 28, 0.4) !important;
 }
 
@@ -174,7 +183,7 @@ body a:hover {
 
 body [class*="bg-gradient-"] {
   background-image: none !important;
-  background-color: var(--editorial-ink) !important;
+  background-color: transparent !important;
 }
 
 body [class*="bg-primary-"],
@@ -186,9 +195,9 @@ body [class*="bg-green-"],
 body [class*="bg-red-"],
 body [class*="bg-amber-"],
 body [class*="bg-yellow-"] {
-  background-color: var(--editorial-ink) !important;
+  background-color: var(--editorial-paper) !important;
   background-image: none !important;
-  color: var(--editorial-bg) !important;
+  color: var(--editorial-ink) !important;
 }
 
 body [class*="text-primary-"],
