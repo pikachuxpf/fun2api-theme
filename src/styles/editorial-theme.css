@@ -1,0 +1,279 @@
+/* Editorial theme: visual-only overlay for Sub2API. Layout and behavior remain unchanged. */
+:root {
+  color-scheme: light;
+  --editorial-bg: #f8f3c6;
+  --editorial-paper: #fbf7d9;
+  --editorial-ink: #1c1c1c;
+  --editorial-muted: rgba(28, 28, 28, 0.6);
+  --editorial-faint: rgba(28, 28, 28, 0.4);
+  --editorial-line: rgba(28, 28, 28, 0.14);
+}
+
+html,
+body,
+#app {
+  background: var(--editorial-bg) !important;
+  color: var(--editorial-ink) !important;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif !important;
+  line-height: 1.65;
+}
+
+body * {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body .font-serif {
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.035em;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: var(--editorial-ink) !important;
+}
+
+body p,
+body li,
+body label,
+body input,
+body textarea,
+body select,
+body button {
+  line-height: 1.65;
+}
+
+body button,
+body .btn {
+  font-family: inherit;
+  border: 1px solid var(--editorial-ink) !important;
+  border-radius: 0 !important;
+  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease, opacity 200ms ease !important;
+}
+
+body .btn,
+body .btn-primary,
+body .btn-danger,
+body .btn-success,
+body .btn-warning,
+body .btn-stripe,
+body .btn-airwallex,
+body .btn-alipay,
+body .btn-wxpay {
+  background: var(--editorial-ink) !important;
+  background-image: none !important;
+  color: var(--editorial-bg) !important;
+  text-shadow: none !important;
+}
+
+body .btn:hover,
+body .btn-primary:hover,
+body .btn-danger:hover,
+body .btn-success:hover,
+body .btn-warning:hover,
+body .btn-stripe:hover,
+body .btn-airwallex:hover,
+body .btn-alipay:hover,
+body .btn-wxpay:hover {
+  background: transparent !important;
+  color: var(--editorial-ink) !important;
+  border-color: var(--editorial-ink) !important;
+}
+
+body .btn-secondary,
+body .btn-ghost {
+  background: transparent !important;
+  color: var(--editorial-ink) !important;
+  border-color: var(--editorial-line) !important;
+}
+
+body .btn-secondary:hover,
+body .btn-ghost:hover {
+  background: rgba(28, 28, 28, 0.06) !important;
+  border-color: rgba(28, 28, 28, 0.4) !important;
+}
+
+body .input,
+body input,
+body textarea,
+body select {
+  background: transparent !important;
+  color: var(--editorial-ink) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--editorial-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body .input:focus,
+body input:focus,
+body textarea:focus,
+body select:focus {
+  border-color: var(--editorial-ink) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+body input::placeholder,
+body textarea::placeholder {
+  color: var(--editorial-faint) !important;
+}
+
+body .card,
+body .glass-card,
+body .card-glass {
+  background: rgba(251, 247, 217, 0.58) !important;
+  border: 1px solid var(--editorial-line) !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+}
+
+body .card-hover:hover,
+body .card:hover,
+body .glass-card:hover {
+  border-color: rgba(28, 28, 28, 0.4) !important;
+  transform: none !important;
+}
+
+body .card-header,
+body .card-footer {
+  border-color: var(--editorial-line) !important;
+}
+
+body .glass {
+  background: rgba(248, 243, 198, 0.92) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+body a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28em;
+  text-decoration-color: transparent;
+  transition: color 200ms ease, text-decoration-color 200ms ease, opacity 200ms ease !important;
+}
+
+body a:hover {
+  color: var(--editorial-ink) !important;
+  text-decoration-color: currentColor;
+}
+
+body [class*="bg-gradient-"] {
+  background-image: none !important;
+  background-color: var(--editorial-ink) !important;
+}
+
+body [class*="bg-primary-"],
+body [class*="bg-blue-"],
+body [class*="bg-cyan-"],
+body [class*="bg-teal-"],
+body [class*="bg-emerald-"],
+body [class*="bg-green-"],
+body [class*="bg-red-"],
+body [class*="bg-amber-"],
+body [class*="bg-yellow-"] {
+  background-color: var(--editorial-ink) !important;
+  background-image: none !important;
+  color: var(--editorial-bg) !important;
+}
+
+body [class*="text-primary-"],
+body [class*="text-blue-"],
+body [class*="text-cyan-"],
+body [class*="text-teal-"],
+body [class*="text-emerald-"],
+body [class*="text-green-"],
+body [class*="text-red-"],
+body [class*="text-amber-"],
+body [class*="text-yellow-"] {
+  color: var(--editorial-ink) !important;
+}
+
+body [class*="border-primary-"],
+body [class*="border-blue-"],
+body [class*="border-cyan-"],
+body [class*="border-teal-"],
+body [class*="border-emerald-"],
+body [class*="border-green-"],
+body [class*="border-red-"],
+body [class*="border-amber-"],
+body [class*="border-yellow-"] {
+  border-color: var(--editorial-line) !important;
+}
+
+body [class~="bg-white"],
+body [class*="bg-gray-"],
+body [class*="bg-slate-"],
+body [class*="bg-dark-"] {
+  background-color: var(--editorial-paper) !important;
+  background-image: none !important;
+}
+
+body [class*="text-gray-"],
+body [class*="text-slate-"],
+body [class*="text-dark-"] {
+  color: var(--editorial-muted) !important;
+}
+
+body [class*="border-gray-"],
+body [class*="border-slate-"],
+body [class*="border-dark-"] {
+  border-color: var(--editorial-line) !important;
+}
+
+body .sidebar,
+body .topbar,
+body header,
+body nav {
+  background: rgba(248, 243, 198, 0.94) !important;
+  border-color: var(--editorial-line) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+body .sidebar-logo {
+  background: transparent !important;
+  border: 1px solid var(--editorial-line) !important;
+}
+
+body .sidebar-brand-title,
+body .sidebar-link,
+body .sidebar-label {
+  color: var(--editorial-ink) !important;
+}
+
+body .sidebar-link:hover,
+body .sidebar-link.active,
+body .sidebar-link.router-link-active {
+  background: rgba(28, 28, 28, 0.06) !important;
+  color: var(--editorial-ink) !important;
+}
+
+body ::selection {
+  background: rgba(28, 28, 28, 0.18) !important;
+  color: var(--editorial-ink) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body *,
+  body *::before,
+  body *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
