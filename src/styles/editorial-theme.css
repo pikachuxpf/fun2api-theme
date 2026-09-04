@@ -3,10 +3,26 @@
   color-scheme: light;
   --editorial-bg: #f8f3c6;
   --editorial-paper: #fbf7d9;
+  --editorial-paper-strong: #f4edbd;
   --editorial-ink: #1c1c1c;
-  --editorial-muted: rgba(28, 28, 28, 0.6);
-  --editorial-faint: rgba(28, 28, 28, 0.4);
-  --editorial-line: rgba(28, 28, 28, 0.14);
+  --editorial-muted: rgba(28, 28, 28, 0.66);
+  --editorial-faint: rgba(28, 28, 28, 0.46);
+  --editorial-line: rgba(28, 28, 28, 0.18);
+  --editorial-line-strong: rgba(28, 28, 28, 0.34);
+  --editorial-control: #f7f0c8;
+}
+
+html.dark {
+  color-scheme: dark;
+  --editorial-bg: #25251f;
+  --editorial-paper: #302f27;
+  --editorial-paper-strong: #3a392f;
+  --editorial-ink: #f8f3c6;
+  --editorial-muted: rgba(248, 243, 198, 0.72);
+  --editorial-faint: rgba(248, 243, 198, 0.5);
+  --editorial-line: rgba(248, 243, 198, 0.22);
+  --editorial-line-strong: rgba(248, 243, 198, 0.42);
+  --editorial-control: #35342b;
 }
 
 html,
@@ -36,14 +52,6 @@ body .font-serif {
   font-family: Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", serif !important;
   font-weight: 400 !important;
   letter-spacing: -0.035em;
-}
-
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6 {
   color: var(--editorial-ink) !important;
 }
 
@@ -60,7 +68,7 @@ body button {
 body button,
 body .btn {
   font-family: inherit;
-  border: 1px solid var(--editorial-ink) !important;
+  border: 1px solid var(--editorial-line-strong) !important;
   border-radius: 0 !important;
   transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease, opacity 200ms ease !important;
 }
@@ -74,24 +82,10 @@ body .btn-stripe,
 body .btn-airwallex,
 body .btn-alipay,
 body .btn-wxpay {
-  background: var(--editorial-paper) !important;
+  background: var(--editorial-paper-strong) !important;
   background-image: none !important;
   color: var(--editorial-ink) !important;
   text-shadow: none !important;
-}
-
-body .btn:hover,
-body .btn-primary:hover,
-body .btn-danger:hover,
-body .btn-success:hover,
-body .btn-warning:hover,
-body .btn-stripe:hover,
-body .btn-airwallex:hover,
-body .btn-alipay:hover,
-body .btn-wxpay:hover {
-  background: transparent !important;
-  color: var(--editorial-ink) !important;
-  border-color: var(--editorial-ink) !important;
 }
 
 body .btn-secondary,
@@ -101,8 +95,6 @@ body .btn-ghost {
   border-color: var(--editorial-line) !important;
 }
 
-body .btn-secondary:hover,
-body .btn-ghost:hover,
 body .btn:hover,
 body .btn-primary:hover,
 body .btn-danger:hover,
@@ -111,9 +103,12 @@ body .btn-warning:hover,
 body .btn-stripe:hover,
 body .btn-airwallex:hover,
 body .btn-alipay:hover,
-body .btn-wxpay:hover {
-  background: rgba(255, 255, 255, 0.34) !important;
-  border-color: rgba(28, 28, 28, 0.4) !important;
+body .btn-wxpay:hover,
+body .btn-secondary:hover,
+body .btn-ghost:hover {
+  background: var(--editorial-control) !important;
+  color: var(--editorial-ink) !important;
+  border-color: var(--editorial-line-strong) !important;
 }
 
 body .input,
@@ -132,7 +127,7 @@ body .input:focus,
 body input:focus,
 body textarea:focus,
 body select:focus {
-  border-color: var(--editorial-ink) !important;
+  border-color: var(--editorial-line-strong) !important;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -144,8 +139,11 @@ body textarea::placeholder {
 
 body .card,
 body .glass-card,
-body .card-glass {
-  background: rgba(251, 247, 217, 0.58) !important;
+body .card-glass,
+body [role="dialog"],
+body dialog,
+body [data-radix-popper-content-wrapper] > * {
+  background: var(--editorial-paper) !important;
   border: 1px solid var(--editorial-line) !important;
   border-radius: 0 !important;
   backdrop-filter: none !important;
@@ -154,7 +152,7 @@ body .card-glass {
 body .card-hover:hover,
 body .card:hover,
 body .glass-card:hover {
-  border-color: rgba(28, 28, 28, 0.4) !important;
+  border-color: var(--editorial-line-strong) !important;
   transform: none !important;
 }
 
@@ -164,7 +162,7 @@ body .card-footer {
 }
 
 body .glass {
-  background: rgba(248, 243, 198, 0.92) !important;
+  background: color-mix(in srgb, var(--editorial-bg) 92%, transparent) !important;
   backdrop-filter: blur(4px) !important;
 }
 
@@ -181,66 +179,118 @@ body a:hover {
   text-decoration-color: currentColor;
 }
 
-body [class*="bg-gradient-"] {
+/* Remove the original colored fills without creating black replacement blocks. */
+html:not(.dark) body [class*="bg-gradient-"],
+html.dark body [class*="bg-gradient-"] {
   background-image: none !important;
   background-color: transparent !important;
 }
 
-body [class*="bg-primary-"],
-body [class*="bg-blue-"],
-body [class*="bg-cyan-"],
-body [class*="bg-teal-"],
-body [class*="bg-emerald-"],
-body [class*="bg-green-"],
-body [class*="bg-red-"],
-body [class*="bg-amber-"],
-body [class*="bg-yellow-"] {
+html:not(.dark) body [class*="bg-primary-"],
+html:not(.dark) body [class*="bg-blue-"],
+html:not(.dark) body [class*="bg-cyan-"],
+html:not(.dark) body [class*="bg-teal-"],
+html:not(.dark) body [class*="bg-emerald-"],
+html:not(.dark) body [class*="bg-green-"],
+html:not(.dark) body [class*="bg-red-"],
+html:not(.dark) body [class*="bg-amber-"],
+html:not(.dark) body [class*="bg-yellow-"],
+html.dark body [class*="bg-primary-"],
+html.dark body [class*="bg-blue-"],
+html.dark body [class*="bg-cyan-"],
+html.dark body [class*="bg-teal-"],
+html.dark body [class*="bg-emerald-"],
+html.dark body [class*="bg-green-"],
+html.dark body [class*="bg-red-"],
+html.dark body [class*="bg-amber-"],
+html.dark body [class*="bg-yellow-"] {
   background-color: var(--editorial-paper) !important;
   background-image: none !important;
   color: var(--editorial-ink) !important;
 }
 
-body [class*="text-primary-"],
-body [class*="text-blue-"],
-body [class*="text-cyan-"],
-body [class*="text-teal-"],
-body [class*="text-emerald-"],
-body [class*="text-green-"],
-body [class*="text-red-"],
-body [class*="text-amber-"],
-body [class*="text-yellow-"] {
-  color: var(--editorial-ink) !important;
-}
-
-body [class*="border-primary-"],
-body [class*="border-blue-"],
-body [class*="border-cyan-"],
-body [class*="border-teal-"],
-body [class*="border-emerald-"],
-body [class*="border-green-"],
-body [class*="border-red-"],
-body [class*="border-amber-"],
-body [class*="border-yellow-"] {
-  border-color: var(--editorial-line) !important;
-}
-
-body [class~="bg-white"],
-body [class*="bg-gray-"],
-body [class*="bg-slate-"],
-body [class*="bg-dark-"] {
+html:not(.dark) body [class~="bg-white"],
+html:not(.dark) body [class*="bg-gray-"],
+html:not(.dark) body [class*="bg-slate-"],
+html:not(.dark) body [class*="bg-dark-"],
+html.dark body [class~="bg-white"],
+html.dark body [class*="bg-gray-"],
+html.dark body [class*="bg-slate-"],
+html.dark body [class*="bg-dark-"] {
   background-color: var(--editorial-paper) !important;
   background-image: none !important;
 }
 
-body [class*="text-gray-"],
-body [class*="text-slate-"],
-body [class*="text-dark-"] {
+/* Light mode must never inherit white text or white SVG icons onto paper surfaces. */
+html:not(.dark) body [class~="text-white"],
+html:not(.dark) body [class*="text-white/"],
+html:not(.dark) body [class*="fill-white"],
+html:not(.dark) body [class*="stroke-white"] {
+  color: var(--editorial-ink) !important;
+  fill: var(--editorial-ink) !important;
+  stroke: var(--editorial-ink) !important;
+}
+
+html.dark body [class~="text-white"],
+html.dark body [class*="text-white/"],
+html.dark body [class*="fill-white"],
+html.dark body [class*="stroke-white"] {
+  color: var(--editorial-ink) !important;
+  fill: var(--editorial-ink) !important;
+  stroke: var(--editorial-ink) !important;
+}
+
+html:not(.dark) body [class*="text-gray-"],
+html:not(.dark) body [class*="text-slate-"],
+html:not(.dark) body [class*="text-dark-"],
+html.dark body [class*="text-gray-"],
+html.dark body [class*="text-slate-"],
+html.dark body [class*="text-dark-"] {
   color: var(--editorial-muted) !important;
 }
 
-body [class*="border-gray-"],
-body [class*="border-slate-"],
-body [class*="border-dark-"] {
+/* Keep channel tables and dividers on the same light line instead of dark borders. */
+html body table,
+html body thead,
+html body tbody,
+html body tr,
+html body th,
+html body td,
+html body [class*="border-black"],
+html body [class*="border-gray-"],
+html body [class*="border-slate-"],
+html body [class*="border-dark-"],
+html body [class*="divide-"] {
+  border-color: var(--editorial-line) !important;
+}
+
+html body [class*="outline-black"],
+html body [class*="ring-black"] {
+  outline-color: var(--editorial-line-strong) !important;
+  --tw-ring-color: var(--editorial-line-strong) !important;
+}
+
+html body [class*="text-primary-"],
+html body [class*="text-blue-"],
+html body [class*="text-cyan-"],
+html body [class*="text-teal-"],
+html body [class*="text-emerald-"],
+html body [class*="text-green-"],
+html body [class*="text-red-"],
+html body [class*="text-amber-"],
+html body [class*="text-yellow-"] {
+  color: var(--editorial-ink) !important;
+}
+
+html body [class*="border-primary-"],
+html body [class*="border-blue-"],
+html body [class*="border-cyan-"],
+html body [class*="border-teal-"],
+html body [class*="border-emerald-"],
+html body [class*="border-green-"],
+html body [class*="border-red-"],
+html body [class*="border-amber-"],
+html body [class*="border-yellow-"] {
   border-color: var(--editorial-line) !important;
 }
 
@@ -248,7 +298,7 @@ body .sidebar,
 body .topbar,
 body header,
 body nav {
-  background: rgba(248, 243, 198, 0.94) !important;
+  background: color-mix(in srgb, var(--editorial-bg) 94%, transparent) !important;
   border-color: var(--editorial-line) !important;
   backdrop-filter: blur(4px) !important;
 }
@@ -267,12 +317,12 @@ body .sidebar-label {
 body .sidebar-link:hover,
 body .sidebar-link.active,
 body .sidebar-link.router-link-active {
-  background: rgba(28, 28, 28, 0.06) !important;
+  background: color-mix(in srgb, var(--editorial-ink) 8%, transparent) !important;
   color: var(--editorial-ink) !important;
 }
 
 body ::selection {
-  background: rgba(28, 28, 28, 0.18) !important;
+  background: color-mix(in srgb, var(--editorial-ink) 18%, transparent) !important;
   color: var(--editorial-ink) !important;
 }
 
