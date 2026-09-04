@@ -1,15 +1,15 @@
 /* Editorial theme: visual-only overlay for Sub2API. Layout and behavior remain unchanged. */
 :root {
   color-scheme: light;
-  --editorial-bg: #f8f3c6;
-  --editorial-paper: #fbf7d9;
-  --editorial-paper-strong: #f4edbd;
-  --editorial-ink: #1c1c1c;
-  --editorial-muted: rgba(28, 28, 28, 0.66);
-  --editorial-faint: rgba(28, 28, 28, 0.46);
-  --editorial-line: rgba(28, 28, 28, 0.18);
-  --editorial-line-strong: rgba(28, 28, 28, 0.34);
-  --editorial-control: #f7f0c8;
+  --editorial-bg: #f1e7dc;
+  --editorial-paper: #faf5ef;
+  --editorial-paper-strong: #e8d8c8;
+  --editorial-ink: #241f1b;
+  --editorial-muted: rgba(36, 31, 27, 0.66);
+  --editorial-faint: rgba(36, 31, 27, 0.46);
+  --editorial-line: rgba(36, 31, 27, 0.18);
+  --editorial-line-strong: rgba(36, 31, 27, 0.34);
+  --editorial-control: #f6ece3;
 }
 
 html.dark {
