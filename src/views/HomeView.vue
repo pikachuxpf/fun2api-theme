@@ -501,7 +501,6 @@ import LocaleSwitcher from '@/components/common/LocaleSwitcher.vue'
 import Icon from '@/components/icons/Icon.vue'
 import { sanitizeUrl } from '@/utils/url'
 import { FeatureFlags, isFeatureFlagEnabled } from '@/utils/featureFlags'
-import { setTheme } from '@/utils/theme'
 
 const { t } = useI18n()
 
@@ -551,9 +550,9 @@ const currentYear = computed(() => new Date().getFullYear())
 
 // Toggle theme
 function toggleTheme() {
-  const nextTheme = isDark.value ? 'light' : 'dark'
-  isDark.value = nextTheme === 'dark'
-  setTheme(nextTheme)
+  isDark.value = !isDark.value
+  document.documentElement.classList.toggle('dark', isDark.value)
+  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
 }
 
 // Initialize theme
