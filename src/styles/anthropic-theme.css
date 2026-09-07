@@ -450,6 +450,58 @@ html.anthropic-theme .auth-brand-title {
   color: var(--anthropic-heading) !important;
 }
 
+/* The landing page terminal uses scoped component selectors; these explicit rules keep its code readable. */
+html.anthropic-theme .terminal-window {
+  background: #252a36 !important;
+  border: 1px solid #414958 !important;
+  box-shadow: 0 22px 46px rgb(45 42 38 / 0.18) !important;
+}
+
+html.dark.anthropic-theme .terminal-window {
+  background: #17191f !important;
+  border-color: #454a56 !important;
+}
+
+html.anthropic-theme .terminal-header {
+  background: #303746 !important;
+  border-bottom-color: #454a56 !important;
+}
+
+html.anthropic-theme .terminal-title {
+  color: #c0c6d0 !important;
+}
+
+html.anthropic-theme .code-prompt,
+html.anthropic-theme .cursor {
+  color: #f0a37f !important;
+  background-color: #f0a37f !important;
+}
+
+html.anthropic-theme .code-cmd {
+  color: #f1c27d !important;
+}
+
+html.anthropic-theme .code-flag {
+  color: #d4b6e8 !important;
+}
+
+html.anthropic-theme .code-url {
+  color: #9fd0c4 !important;
+}
+
+html.anthropic-theme .code-comment {
+  color: #aeb6c3 !important;
+}
+
+html.anthropic-theme .code-success {
+  color: #b9e2b8 !important;
+  background: rgb(71 116 92 / 0.38) !important;
+}
+
+html.anthropic-theme .code-response {
+  color: #f2d38d !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html.anthropic-theme *,
   html.anthropic-theme *::before,
