@@ -427,6 +427,46 @@ html.anthropic-theme .toast-success { border-left-color: var(--anthropic-success
 html.anthropic-theme .toast-error { border-left-color: var(--anthropic-danger) !important; }
 html.anthropic-theme .toast-warning { border-left-color: var(--anthropic-warning) !important; }
 
+/* Admin shell surfaces: neutralize the legacy teal/cyan mesh without touching semantic status colors. */
+html.anthropic-theme .app-layout,
+html.anthropic-theme .app-main,
+html.anthropic-theme .app-main-content {
+  background: var(--anthropic-bg) !important;
+}
+
+html.anthropic-theme .app-background-decoration {
+  display: none !important;
+}
+
+html.anthropic-theme .app-main > .glass,
+html.anthropic-theme .app-main > header.glass {
+  background: var(--anthropic-surface) !important;
+  border-color: var(--anthropic-line) !important;
+}
+
+html.dark.anthropic-theme .app-layout,
+html.dark.anthropic-theme .app-main,
+html.dark.anthropic-theme .app-main-content {
+  background: var(--anthropic-bg) !important;
+}
+
+/* These utility surfaces are used by dashboard quick-action/table wrappers. */
+html.anthropic-theme .bg-gray-50\/60,
+html.anthropic-theme .bg-gray-50\/50,
+html.anthropic-theme .bg-gray-50\/30,
+html.anthropic-theme .bg-gray-200\/50,
+html.anthropic-theme .bg-dark-800\/50,
+html.anthropic-theme .bg-dark-800\/40,
+html.anthropic-theme .bg-dark-800\/30,
+html.anthropic-theme .bg-dark-800\/60,
+html.anthropic-theme .bg-dark-800\/70,
+html.anthropic-theme .bg-dark-800\/80,
+html.anthropic-theme .bg-dark-900\/60,
+html.anthropic-theme .bg-dark-900\/40,
+html.anthropic-theme .bg-dark-900\/30 {
+  background-color: var(--anthropic-surface-muted) !important;
+}
+
 /* Auth pages: replace the old gradient/orb treatment with a quiet paper-like stage. */
 html.anthropic-theme .auth-layout {
   background: var(--anthropic-bg) !important;
