@@ -1,12 +1,12 @@
 <template>
-  <div class="relative flex min-h-screen items-center justify-center overflow-hidden p-4">
+  <div class="auth-layout relative flex min-h-screen items-center justify-center overflow-hidden p-4">
     <!-- Background -->
     <div
-      class="absolute inset-0 bg-gradient-to-br from-gray-50 via-primary-50/30 to-gray-100 dark:from-dark-950 dark:via-dark-900 dark:to-dark-950"
+      class="auth-background absolute inset-0 bg-gradient-to-br from-gray-50 via-primary-50/30 to-gray-100 dark:from-dark-950 dark:via-dark-900 dark:to-dark-950"
     ></div>
 
     <!-- Decorative Elements -->
-    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="auth-decoration pointer-events-none absolute inset-0 overflow-hidden">
       <!-- Gradient Orbs -->
       <div
         class="absolute -right-40 -top-40 h-80 w-80 rounded-full bg-primary-400/20 blur-3xl"
@@ -45,7 +45,7 @@
       </div>
 
       <!-- Card Container -->
-      <div class="card-glass rounded-2xl p-8 shadow-glass">
+      <div class="auth-card card-glass rounded-2xl p-8 shadow-glass">
         <slot />
       </div>
 

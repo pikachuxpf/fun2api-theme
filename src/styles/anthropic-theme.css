@@ -1,0 +1,467 @@
+/* Anthropic-inspired visual layer. Keep this file replaceable and independent from product logic. */
+:root {
+  --anthropic-bg: #f7f6f2;
+  --anthropic-surface: #fffefa;
+  --anthropic-surface-muted: #efede7;
+  --anthropic-surface-soft: #f3f1eb;
+  --anthropic-ink: #2d2a26;
+  --anthropic-heading: #24211e;
+  --anthropic-muted: #736f68;
+  --anthropic-faint: #9c978e;
+  --anthropic-line: #e4dfd6;
+  --anthropic-line-strong: #d5cec3;
+  --anthropic-accent: #c15f3c;
+  --anthropic-accent-strong: #a94e31;
+  --anthropic-accent-soft: #f2ddd4;
+  --anthropic-success: #47745c;
+  --anthropic-warning: #a56b2a;
+  --anthropic-danger: #b24d45;
+  --anthropic-info: #4f7180;
+  --anthropic-shadow-sm: 0 1px 2px rgb(45 42 38 / 0.05);
+  --anthropic-shadow-md: 0 8px 24px rgb(45 42 38 / 0.08);
+  --anthropic-shadow-lg: 0 18px 48px rgb(45 42 38 / 0.12);
+  --anthropic-focus: rgb(193 95 60 / 0.34);
+}
+
+html.anthropic-theme {
+  color-scheme: light;
+  background: var(--anthropic-bg);
+}
+
+html.dark.anthropic-theme {
+  --anthropic-bg: #201e1b;
+  --anthropic-surface: #2a2723;
+  --anthropic-surface-muted: #312d28;
+  --anthropic-surface-soft: #26231f;
+  --anthropic-ink: #eee9e1;
+  --anthropic-heading: #fffaf2;
+  --anthropic-muted: #b4aca1;
+  --anthropic-faint: #837b71;
+  --anthropic-line: #433e37;
+  --anthropic-line-strong: #5a5148;
+  --anthropic-accent: #e08a68;
+  --anthropic-accent-strong: #ef9b78;
+  --anthropic-accent-soft: #52352b;
+  --anthropic-success: #8fc19c;
+  --anthropic-warning: #e0ac6d;
+  --anthropic-danger: #e58b82;
+  --anthropic-info: #9bc1ca;
+  --anthropic-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.18);
+  --anthropic-shadow-md: 0 10px 28px rgb(0 0 0 / 0.24);
+  --anthropic-shadow-lg: 0 20px 52px rgb(0 0 0 / 0.3);
+  --anthropic-focus: rgb(224 138 104 / 0.48);
+  color-scheme: dark;
+}
+
+html.anthropic-theme,
+html.anthropic-theme body {
+  background: var(--anthropic-bg) !important;
+  color: var(--anthropic-ink) !important;
+}
+
+html.anthropic-theme body {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
+    "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: -0.006em;
+}
+
+html.anthropic-theme *,
+html.anthropic-theme *::before,
+html.anthropic-theme *::after {
+  border-color: var(--anthropic-line);
+}
+
+html.anthropic-theme ::selection {
+  background: var(--anthropic-accent-soft);
+  color: var(--anthropic-heading);
+}
+
+html.anthropic-theme ::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+html.anthropic-theme *:hover::-webkit-scrollbar-thumb,
+html.anthropic-theme *:focus-within::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--anthropic-muted) 32%, transparent);
+}
+
+html.anthropic-theme *:hover::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--anthropic-muted) 55%, transparent);
+}
+
+/* Direct utility remapping keeps pages that use Tailwind classes in the same system. */
+html.anthropic-theme .bg-gray-50,
+html.anthropic-theme .bg-gray-100,
+html.anthropic-theme .bg-gray-200\/50,
+html.anthropic-theme .bg-gray-50\/80 {
+  background-color: var(--anthropic-surface-muted) !important;
+}
+
+html.anthropic-theme .bg-white,
+html.anthropic-theme .bg-white\/70,
+html.anthropic-theme .bg-white\/80 {
+  background-color: var(--anthropic-surface) !important;
+}
+
+html.anthropic-theme .text-gray-900,
+html.anthropic-theme .text-gray-800,
+html.anthropic-theme .text-gray-700,
+html.anthropic-theme .text-gray-600,
+html.anthropic-theme .text-gray-500,
+html.anthropic-theme .text-gray-400 {
+  color: var(--anthropic-ink) !important;
+}
+
+html.anthropic-theme .text-gray-500,
+html.anthropic-theme .text-gray-400 {
+  color: var(--anthropic-muted) !important;
+}
+
+html.anthropic-theme .text-gray-300 {
+  color: var(--anthropic-faint) !important;
+}
+
+html.anthropic-theme .border-gray-100,
+html.anthropic-theme .border-gray-200,
+html.anthropic-theme .border-gray-300 {
+  border-color: var(--anthropic-line) !important;
+}
+
+html.anthropic-theme .bg-gradient-to-br,
+html.anthropic-theme .bg-gradient-to-r,
+html.anthropic-theme .bg-gradient-to-b,
+html.anthropic-theme .bg-gradient-to-t,
+html.anthropic-theme .bg-gradient-to-l {
+  background-image: none !important;
+}
+
+html.anthropic-theme .from-gray-50,
+html.anthropic-theme .via-primary-50\/30,
+html.anthropic-theme .to-gray-100,
+html.anthropic-theme .from-primary-500,
+html.anthropic-theme .to-primary-600,
+html.anthropic-theme .from-primary-600,
+html.anthropic-theme .to-primary-700 {
+  --tw-gradient-from: transparent !important;
+  --tw-gradient-to: transparent !important;
+}
+
+html.anthropic-theme .bg-primary-50,
+html.anthropic-theme .bg-primary-100,
+html.anthropic-theme .bg-primary-50\/40,
+html.anthropic-theme .bg-primary-900\/20,
+html.anthropic-theme .bg-primary-900\/30 {
+  background-color: var(--anthropic-accent-soft) !important;
+}
+
+html.anthropic-theme .text-primary-300,
+html.anthropic-theme .text-primary-400,
+html.anthropic-theme .text-primary-500,
+html.anthropic-theme .text-primary-600,
+html.anthropic-theme .text-primary-700 {
+  color: var(--anthropic-accent-strong) !important;
+}
+
+html.anthropic-theme .border-primary-300,
+html.anthropic-theme .border-primary-500,
+html.anthropic-theme .border-primary-700 {
+  border-color: var(--anthropic-accent) !important;
+}
+
+html.anthropic-theme .ring-primary-500,
+html.anthropic-theme .focus\:ring-primary-500:focus,
+html.anthropic-theme .focus\:ring-primary-500\/50:focus {
+  --tw-ring-color: var(--anthropic-focus) !important;
+}
+
+/* Shared component language. */
+html.anthropic-theme .btn {
+  border-radius: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease,
+    box-shadow 160ms ease, transform 160ms ease;
+}
+
+html.anthropic-theme .btn:focus-visible,
+html.anthropic-theme button:focus-visible,
+html.anthropic-theme a:focus-visible,
+html.anthropic-theme input:focus-visible,
+html.anthropic-theme select:focus-visible,
+html.anthropic-theme textarea:focus-visible {
+  outline: 2px solid var(--anthropic-focus);
+  outline-offset: 2px;
+}
+
+html.anthropic-theme .btn-primary {
+  background: var(--anthropic-accent) !important;
+  color: #fffaf5 !important;
+  box-shadow: var(--anthropic-shadow-sm) !important;
+}
+
+html.anthropic-theme .btn-primary:hover {
+  background: var(--anthropic-accent-strong) !important;
+  box-shadow: var(--anthropic-shadow-md) !important;
+  transform: translateY(-1px);
+}
+
+html.anthropic-theme .btn-secondary {
+  background: var(--anthropic-surface) !important;
+  border-color: var(--anthropic-line-strong) !important;
+  color: var(--anthropic-ink) !important;
+  box-shadow: var(--anthropic-shadow-sm) !important;
+}
+
+html.anthropic-theme .btn-secondary:hover,
+html.anthropic-theme .btn-ghost:hover {
+  background: var(--anthropic-surface-muted) !important;
+  border-color: var(--anthropic-line-strong) !important;
+}
+
+html.anthropic-theme .btn-ghost {
+  color: var(--anthropic-muted) !important;
+}
+
+html.anthropic-theme .btn-danger {
+  background: var(--anthropic-danger) !important;
+  box-shadow: var(--anthropic-shadow-sm) !important;
+}
+
+html.anthropic-theme .btn-success {
+  background: var(--anthropic-success) !important;
+  box-shadow: var(--anthropic-shadow-sm) !important;
+}
+
+html.anthropic-theme .btn-warning {
+  background: var(--anthropic-warning) !important;
+  box-shadow: var(--anthropic-shadow-sm) !important;
+}
+
+html.anthropic-theme .input,
+html.anthropic-theme input.input,
+html.anthropic-theme textarea.input,
+html.anthropic-theme select.input {
+  border-color: var(--anthropic-line-strong) !important;
+  border-radius: 0.65rem;
+  background: var(--anthropic-surface) !important;
+  color: var(--anthropic-ink) !important;
+  box-shadow: inset 0 1px 1px rgb(45 42 38 / 0.025);
+}
+
+html.anthropic-theme .input:focus,
+html.anthropic-theme textarea:focus,
+html.anthropic-theme select:focus {
+  border-color: var(--anthropic-accent) !important;
+  box-shadow: 0 0 0 3px var(--anthropic-focus) !important;
+}
+
+html.anthropic-theme .card,
+html.anthropic-theme .card-glass,
+html.anthropic-theme .glass-card {
+  border: 1px solid var(--anthropic-line) !important;
+  border-radius: 0.8rem;
+  background: var(--anthropic-surface) !important;
+  box-shadow: var(--anthropic-shadow-sm) !important;
+  backdrop-filter: none !important;
+}
+
+html.anthropic-theme .card-hover:hover {
+  border-color: var(--anthropic-line-strong) !important;
+  box-shadow: var(--anthropic-shadow-md) !important;
+  transform: translateY(-1px);
+}
+
+html.anthropic-theme .card-header,
+html.anthropic-theme .card-footer,
+html.anthropic-theme .modal-header,
+html.anthropic-theme .modal-footer,
+html.anthropic-theme .dialog-header,
+html.anthropic-theme .dialog-footer {
+  border-color: var(--anthropic-line) !important;
+}
+
+html.anthropic-theme .table-container,
+html.anthropic-theme .table-scroll-container {
+  border-color: var(--anthropic-line) !important;
+  border-radius: 0.8rem;
+  background: var(--anthropic-surface) !important;
+  box-shadow: var(--anthropic-shadow-sm) !important;
+}
+
+html.anthropic-theme .table th,
+html.anthropic-theme .table-header,
+html.anthropic-theme thead {
+  background: var(--anthropic-surface-muted) !important;
+  color: var(--anthropic-muted) !important;
+}
+
+html.anthropic-theme .table td,
+html.anthropic-theme tbody,
+html.anthropic-theme .table-body {
+  background: var(--anthropic-surface) !important;
+  color: var(--anthropic-ink) !important;
+}
+
+html.anthropic-theme .table td,
+html.anthropic-theme .table th,
+html.anthropic-theme tbody tr,
+html.anthropic-theme thead tr {
+  border-color: var(--anthropic-line) !important;
+}
+
+html.anthropic-theme .table tbody tr:hover,
+html.anthropic-theme tbody tr:hover {
+  background: var(--anthropic-surface-soft) !important;
+}
+
+html.anthropic-theme .dropdown,
+html.anthropic-theme .select-dropdown-portal,
+html.anthropic-theme .modal-content,
+html.anthropic-theme .dialog-container {
+  border: 1px solid var(--anthropic-line) !important;
+  border-radius: 0.8rem;
+  background: var(--anthropic-surface) !important;
+  box-shadow: var(--anthropic-shadow-lg) !important;
+}
+
+html.anthropic-theme .dropdown-item {
+  color: var(--anthropic-ink) !important;
+}
+
+html.anthropic-theme .dropdown-item:hover {
+  background: var(--anthropic-surface-muted) !important;
+}
+
+html.anthropic-theme .modal-overlay,
+html.anthropic-theme .dialog-overlay {
+  background: rgb(32 30 27 / 0.52) !important;
+  backdrop-filter: blur(3px);
+}
+
+html.anthropic-theme .sidebar {
+  border-color: var(--anthropic-line) !important;
+  background: var(--anthropic-surface) !important;
+  box-shadow: 1px 0 0 rgb(45 42 38 / 0.03);
+}
+
+html.anthropic-theme .sidebar-header {
+  border-color: var(--anthropic-line) !important;
+}
+
+html.anthropic-theme .sidebar-link {
+  border-radius: 0.55rem;
+  color: var(--anthropic-muted) !important;
+}
+
+html.anthropic-theme .sidebar-link:hover {
+  background: var(--anthropic-surface-muted) !important;
+  color: var(--anthropic-ink) !important;
+}
+
+html.anthropic-theme .sidebar-link-active {
+  background: var(--anthropic-accent-soft) !important;
+  color: var(--anthropic-accent-strong) !important;
+  box-shadow: inset 3px 0 0 var(--anthropic-accent);
+}
+
+html.anthropic-theme .sidebar-section-title {
+  color: var(--anthropic-faint) !important;
+  letter-spacing: 0.12em;
+}
+
+html.anthropic-theme .glass {
+  border-color: var(--anthropic-line) !important;
+  background: color-mix(in srgb, var(--anthropic-surface) 94%, transparent) !important;
+  backdrop-filter: none !important;
+}
+
+html.anthropic-theme .page-title,
+html.anthropic-theme h1,
+html.anthropic-theme h2,
+html.anthropic-theme h3 {
+  color: var(--anthropic-heading) !important;
+  letter-spacing: -0.025em;
+}
+
+html.anthropic-theme .page-description,
+html.anthropic-theme .input-hint {
+  color: var(--anthropic-muted) !important;
+}
+
+html.anthropic-theme .text-gradient {
+  background: none !important;
+  color: var(--anthropic-accent-strong) !important;
+}
+
+html.anthropic-theme .progress {
+  background: var(--anthropic-surface-muted) !important;
+}
+
+html.anthropic-theme .progress-bar {
+  background: var(--anthropic-accent) !important;
+}
+
+html.anthropic-theme .switch-active {
+  background: var(--anthropic-accent) !important;
+}
+
+html.anthropic-theme .code-block {
+  background: #302b27 !important;
+  color: #f6eee5 !important;
+  border: 1px solid #4a4038;
+}
+
+html.dark.anthropic-theme .code-block {
+  background: #171513 !important;
+  border-color: #403831;
+}
+
+html.anthropic-theme .toast {
+  border-color: var(--anthropic-line) !important;
+  border-left-color: var(--anthropic-accent) !important;
+  background: var(--anthropic-surface) !important;
+  box-shadow: var(--anthropic-shadow-lg) !important;
+}
+
+html.anthropic-theme .toast-success { border-left-color: var(--anthropic-success) !important; }
+html.anthropic-theme .toast-error { border-left-color: var(--anthropic-danger) !important; }
+html.anthropic-theme .toast-warning { border-left-color: var(--anthropic-warning) !important; }
+
+/* Auth pages: replace the old gradient/orb treatment with a quiet paper-like stage. */
+html.anthropic-theme .auth-layout {
+  background: var(--anthropic-bg) !important;
+}
+
+html.anthropic-theme .auth-layout > .auth-background {
+  background: var(--anthropic-bg) !important;
+}
+
+html.anthropic-theme .auth-decoration {
+  display: none !important;
+}
+
+html.anthropic-theme .auth-card {
+  border: 1px solid var(--anthropic-line) !important;
+  background: var(--anthropic-surface) !important;
+  box-shadow: var(--anthropic-shadow-lg) !important;
+}
+
+html.anthropic-theme .auth-brand-title {
+  color: var(--anthropic-heading) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.anthropic-theme *,
+  html.anthropic-theme *::before,
+  html.anthropic-theme *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  html.anthropic-theme .card-hover:hover,
+  html.anthropic-theme .btn-primary:hover {
+    transform: none !important;
+  }
+}
